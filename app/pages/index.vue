@@ -1,42 +1,43 @@
 <template>
   <div>
-    <section class="py-12 bg-gray-50">
+    <AboutMe />
+    <section class="py-12">
       <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">My Skills</h2>
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           <div v-for="skill in portfolio.skills" :key="skill.name"
-               class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center">
-            <div class="text-blue-500 mb-3">
+               class="p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center">
+            <div class="mb-3">
               <i :class="skill.icon" class="text-3xl"></i>
             </div>
-            <h3 class="text-xl font-semibold text-gray-800 mb-2">{{ skill.name }}</h3>
-            <p class="text-gray-600">{{ skill.description }}</p>
+            <h3 class="text-xl font-semibold mb-2">{{ skill.name }}</h3>
+            <p class="">{{ skill.description }}</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-16 bg-white">
+    <section id="projects" class="py-16">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Featured Projects</h2>
+        <h2 class="text-3xl font-bold text-center mb-12">Featured Projects</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div v-for="project in portfolio.projects" :key="project.title"
-               class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
-            <div class="h-48 bg-gray-300 overflow-hidden">
+               class="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+            <div class="h-48 overflow-hidden">
               <img :src="project.image || '/api/placeholder/400/320'" alt="Project thumbnail"
                    class="w-full h-full object-cover">
             </div>
             <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-800 mb-2">{{ project.title }}</h3>
-              <p class="text-gray-600 mb-4">{{ project.description }}</p>
+              <h3 class="text-xl font-bold mb-2">{{ project.title }}</h3>
+              <p class="mb-4">{{ project.description }}</p>
               <div class="flex flex-wrap gap-2 mb-4">
                 <span v-for="tag in project.tags" :key="tag"
-                      class="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                      class="px-3 py-1 text-sm font-medium rounded-full">
                   {{ tag }}
                 </span>
               </div>
-              <a :href="project.link" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center">
+              <a :href="project.link" class="hover:text-blue-800 font-medium inline-flex items-center">
                 View Project
                 <svg class="w-4 h-4 ml-1" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
                      stroke-linecap="round" stroke-linejoin="round">
@@ -72,6 +73,7 @@
         </div>
       </div>
     </section>
+    <Contact />
   </div>
 </template>
 
@@ -79,6 +81,7 @@
 
 import {ref} from 'vue';
 import portfolioData from '../data/portfolioData';
+import Contact from "~/pages/Contact.vue";
 
 definePageMeta({
   layout: 'default'

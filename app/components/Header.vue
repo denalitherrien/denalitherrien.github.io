@@ -2,16 +2,16 @@
   <header class="border-b bg-background">
     <nav class="bg-white shadow-md">
       <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-        <a class="font-bold text-xl text-gray-800" href="#">{{ portfolio.name }}</a>
+        <a class="font-bold text-xl" href="#">{{ portfolio.name }}</a>
         <div class="hidden md:flex items-center space-x-8">
           <a v-for="item in navigation" :key="item.name"
              :href="item.href"
-             class="text-gray-600 hover:text-gray-800 transition duration-300">
+             class="transition duration-300">
             {{ item.name }}
           </a>
         </div>
         <div class="md:hidden">
-          <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-500 hover:text-gray-800">
+          <button @click="mobileMenuOpen = !mobileMenuOpen" class="">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path v-if="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
               <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -24,7 +24,7 @@
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <a v-for="item in navigation" :key="item.name"
              :href="item.href"
-             class="block px-3 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded transition duration-300">
+             class="block px-3 py-2 rounded transition duration-300">
             {{ item.name }}
           </a>
         </div>
@@ -57,7 +57,7 @@ const navigation = ref([
 ]);
 
 const portfolio = ref({
-  name: 'John Doe',
+  name: 'Denali Therrien',
   headline: 'Creative Developer & UI/UX Designer',
   introduction: 'I build exceptional digital experiences that are fast, accessible, visually appealing, and responsive. I specialize in creating applications with Vue.js and crafting beautiful user interfaces.',
   heroImage: '',
