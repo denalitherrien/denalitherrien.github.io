@@ -24,3 +24,6 @@ logs
 
 # npm
 package-lock.json
+
+# Files being edited
+*~*

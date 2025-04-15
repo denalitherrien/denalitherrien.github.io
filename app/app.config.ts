@@ -1,5 +1,5 @@
 export default defineAppConfig({
-  title: 'My Portfolio',
+  title: 'Denali Therrien',
   theme: {
     dark: true,
     colors: {
