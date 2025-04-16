@@ -26,8 +26,13 @@ interface SocialLink {
     icon: string;
 }
 
+interface About {
+    text: string;
+}
+
 interface PortfolioData {
     name: string;
+    about: About[];
     headline: string;
     introduction: string;
     heroImage: string;
@@ -40,14 +45,31 @@ interface PortfolioData {
 
 const portfolioData: PortfolioData = {
     name: 'Denali Therrien',
+    about: [
+        { text: 'Hello! Denali Therrien, a passionate developer and' +
+                'designer with over 2 years of experience' +
+                'creating intuitive and impactful digital experiences. I believe in combining creative thinking' +
+                'with technical expertise to build solutions that not only work flawlessly but also delight users.'},
+        { text: 'My fascination with technology began in the computer labs at school,' +
+                'where I developed my skills through creative exploration and pushing' +
+                'system boundaries—discovering how things worked by occasionally finding their limits.' +
+                'Since then, I\'ve cultivated my skills across various domains of software development,' +
+                'from frontend frameworks to backend architectures. I\'m particularly interested' +
+                'in user experience design and accessibility, ensuring that everything I create' +
+                'can be enjoyed by everyone.'},
+        { text: 'When I\'m not coding, you can find me reading my latest fantasy fixation, playing' +
+                'competitive video games,' +
+                'or calculating the odds of surviving that next encounter in my D&D campaign.' +
+                'I believe in continuous learning and am currently enjoying web development'}
+    ],
     headline: 'Creative Developer & UI/UX Designer',
     introduction: 'I build exceptional digital experiences that are fast, accessible, visually appealing, and responsive. I specialize in creating applications with Vue.js and crafting beautiful user interfaces.',
     heroImage: '',
     footerTagline: 'Building digital products, brands, and experiences',
     skills: [
         { name: 'Vue.js', description: 'Front-end framework', icon: 'fab fa-vuejs' },
-        { name: 'TypeScript', description: 'Typed JavaScript', icon: 'fab fa-js' },
-        { name: 'Responsive Design', description: 'Mobile-first approach', icon: 'fas fa-mobile-alt' },
+        { name: 'Database Management', description: 'Administration', icon: 'fab fa-db' },
+        { name: 'Cloud Infrastructure', description: 'AWS and Azure', icon: 'fas fa-cloud' },
         { name: 'UI/UX Design', description: 'User-centered design', icon: 'fas fa-pencil-ruler' },
         { name: 'Node.js', description: 'Backend development', icon: 'fab fa-node-js' },
         { name: 'Git', description: 'Version control', icon: 'fab fa-git-alt' },
@@ -55,18 +77,19 @@ const portfolioData: PortfolioData = {
         { name: 'API Integration', description: 'REST', icon: 'fas fa-plug' }
     ],
     projects: [
+        // Game Jam, Hippotherapy Profile
         {
-            title: 'E-commerce Platform',
-            description: 'A fully responsive e-commerce platform with product filtering, cart functionality, and payment integration.',
+            title: 'Bubble Brawl',
+            description: 'A local multiplayer platformer created during the Saskatoon Global Game Jam 2025',
             image: '',
-            tags: ['Vue.js', 'TypeScript', 'Tailwind CSS', 'Node.js'],
-            link: '#'
+            tags: ['godot'],
+            link: 'https://ltngkarbn.itch.io/bubble-brawl'
         },
         {
-            title: 'Task Management App',
-            description: 'A drag-and-drop task management application with real-time updates and team collaboration features.',
+            title: 'Hippotherapy Research',
+            description: 'An class group project that took 8 months and 4 agile releases to develop',
             image: '',
-            tags: ['Vue.js', 'Firebase', 'TypeScript'],
+            tags: ['Flutter', 'Firebase', 'ASP.NET'],
             link: '#'
         },
         {
@@ -119,10 +142,8 @@ const portfolioData: PortfolioData = {
 }
 ],
 socialLinks: [
-    { name: 'Twitter', url: '#', icon: 'fab fa-twitter' },
-    { name: 'GitHub', url: '#', icon: 'fab fa-github' },
-    { name: 'LinkedIn', url: '#', icon: 'fab fa-linkedin' },
-    { name: 'Dribbble', url: '#', icon: 'fab fa-dribbble' }
+    { name: 'GitHub', url: 'https://github.com/denalitherrien', icon: 'fab fa-github' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/denali-therrien-987144246/', icon: 'fab fa-linkedin' },
 ]
 };
 

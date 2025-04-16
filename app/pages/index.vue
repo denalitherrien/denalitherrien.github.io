@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-background text-foreground">
+  <div class="bg-background text-foreground flex flex-wrap justify-center">
     <AboutMe />
 
     <!-- Skills Section -->
