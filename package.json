@@ -2,7 +2,7 @@
   "name": "nuxt-app",
   "private": true,
   "type": "module",
-  "homepage": "https://denalitherrien.github.io",
+  "homepage": "https://denalitherrien.github.io/portfolio",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
