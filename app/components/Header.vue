@@ -46,6 +46,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import portfolioData from "~/data/portfolioData";
 
 const mobileMenuOpen = ref(false);
 
@@ -56,91 +57,5 @@ const navigation = ref([
   { name: 'Contact', href: '#contact' }
 ]);
 
-const portfolio = ref({
-  name: 'Denali Therrien',
-  headline: 'Creative Developer & UI/UX Designer',
-  introduction: 'I build exceptional digital experiences that are fast, accessible, visually appealing, and responsive. I specialize in creating applications with Vue.js and crafting beautiful user interfaces.',
-  heroImage: '',
-  footerTagline: 'Building digital products, brands, and experiences',
-  skills: [
-    { name: 'Vue.js', description: 'Front-end framework', icon: 'fab fa-vuejs' },
-    { name: 'JavaScript', description: 'Programming language', icon: 'fab fa-js' },
-    { name: 'Responsive Design', description: 'Mobile-first approach', icon: 'fas fa-mobile-alt' },
-    { name: 'UI/UX Design', description: 'User-centered design', icon: 'fas fa-pencil-ruler' },
-    { name: 'Node.js', description: 'Backend development', icon: 'fab fa-node-js' },
-    { name: 'Git', description: 'Version control', icon: 'fab fa-git-alt' },
-    { name: 'Tailwind CSS', description: 'Utility-first CSS', icon: 'fas fa-paint-brush' },
-    { name: 'API Integration', description: 'REST & GraphQL', icon: 'fas fa-plug' }
-  ],
-  projects: [
-    {
-      title: 'E-commerce Platform',
-      description: 'A fully responsive e-commerce platform with product filtering, cart functionality, and payment integration.',
-      image: '',
-      tags: ['Vue.js', 'Vuex', 'Tailwind CSS', 'Node.js'],
-      link: '#'
-    },
-    {
-      title: 'Task Management App',
-      description: 'A drag-and-drop task management application with real-time updates and team collaboration features.',
-      image: '',
-      tags: ['Vue.js', 'Firebase', 'Vuetify'],
-      link: '#'
-    },
-    {
-      title: 'Portfolio Website',
-      description: 'A custom portfolio website template with smooth animations and a responsive design.',
-      image: '',
-      tags: ['Vue.js', 'GSAP', 'Tailwind CSS'],
-      link: '#'
-    },
-    {
-      title: 'Weather Dashboard',
-      description: 'A weather dashboard that displays forecasts based on user location with interactive maps.',
-      image: '',
-      tags: ['Vue.js', 'OpenWeatherAPI', 'ChartJS'],
-      link: '#'
-    },
-    {
-      title: 'Blog Platform',
-      description: 'A full-featured blog platform with rich text editing, comments, and analytics.',
-      image: '',
-      tags: ['Vue.js', 'Nuxt.js', 'MongoDB'],
-      link: '#'
-    },
-    {
-      title: 'Music Player',
-      description: 'A streaming music player with playlist management and audio visualization.',
-      image: '',
-      tags: ['Vue.js', 'Web Audio API', 'Electron'],
-      link: '#'
-    }
-  ],
-  testimonials: [
-    {
-      name: 'Sarah Johnson',
-      position: 'CEO, TechStart',
-      avatar: '',
-      quote: 'John delivered an exceptional website that exceeded our expectations. His attention to detail and creative approach transformed our online presence.'
-    },
-    {
-      name: 'Michael Chen',
-      position: 'Product Manager, InnovateX',
-      avatar: '',
-      quote: 'Working with John was a pleasure. He understood our requirements perfectly and delivered a polished product on time and on budget.'
-    },
-    {
-      name: 'Emily Rodriguez',
-      position: 'Marketing Director, GrowthLabs',
-      avatar: '',
-      quote: 'John\'s work on our web application dramatically improved user engagement. His UI/UX skills are top-notch, and he\'s incredibly responsive to feedback.'
-    }
-  ],
-  socialLinks: [
-    { name: 'Twitter', url: '#', icon: 'fab fa-twitter' },
-    { name: 'GitHub', url: '#', icon: 'fab fa-github' },
-    { name: 'LinkedIn', url: '#', icon: 'fab fa-linkedin' },
-    { name: 'Dribbble', url: '#', icon: 'fab fa-dribbble' }
-  ]
-});
+const portfolio = ref(portfolioData);
 </script>

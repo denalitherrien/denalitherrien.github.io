@@ -39,7 +39,7 @@ interface PortfolioData {
 }
 
 const portfolioData: PortfolioData = {
-    name: 'John Doe',
+    name: 'Denali Therrien',
     headline: 'Creative Developer & UI/UX Designer',
     introduction: 'I build exceptional digital experiences that are fast, accessible, visually appealing, and responsive. I specialize in creating applications with Vue.js and crafting beautiful user interfaces.',
     heroImage: '',
@@ -52,7 +52,7 @@ const portfolioData: PortfolioData = {
         { name: 'Node.js', description: 'Backend development', icon: 'fab fa-node-js' },
         { name: 'Git', description: 'Version control', icon: 'fab fa-git-alt' },
         { name: 'Tailwind CSS', description: 'Utility-first CSS', icon: 'fas fa-paint-brush' },
-        { name: 'API Integration', description: 'REST & GraphQL', icon: 'fas fa-plug' }
+        { name: 'API Integration', description: 'REST', icon: 'fas fa-plug' }
     ],
     projects: [
         {

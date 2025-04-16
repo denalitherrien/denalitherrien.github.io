@@ -40,6 +40,12 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-section-1: var(--section-1);
+  --color-section-2: var(--section-2);
+  --color-section-3: var(--section-3);
+  --color-item-1: var(--item-1);
+  --color-item-2: var(--item-2);
+  --color-item-3: var(--item-3);
 }
 
 :root {
@@ -76,6 +82,12 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+  --section-1: oklch(0.98 0.01 247.89);
+  --section-2: oklch(0.96 0.01 247.89);
+  --section-3: oklch(0.94 0.01 247.89);
+  --item-1: oklch(0.98 0.01 247.89);
+  --item-2: oklch(0.96 0.01 247.89);
+  --item-3: oklch(0.94 0.01 247.89);
 }
 
 .dark {
@@ -111,6 +123,12 @@
   --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
   --sidebar-border: oklch(0.279 0.041 260.031);
   --sidebar-ring: oklch(0.446 0.043 257.281);
+  --section-1: oklch(0.18 0.04 264.69);
+  --section-2: oklch(0.22 0.04 264.69);
+  --section-3: oklch(0.25 0.04 264.69);
+  --item-1: oklch(0.18 0.04 264.69);
+  --item-2: oklch(0.22 0.04 264.69);
+  --item-3: oklch(0.25 0.04 264.69);
 }
 
 @layer base {
