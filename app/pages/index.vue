@@ -10,7 +10,7 @@
           <div v-for="skill in portfolio.skills" :key="skill.name"
                class="p-6 rounded-lg bg-item-1 shadow-md hover:shadow-lg transition duration-300 text-center border border-border">
             <div class="mb-3 text-accent">
-              <i :class="skill.icon" class="text-3xl"></i>
+<!--              <i :class="skill.icon" class="text-3xl"></i>-->
             </div>
             <h3 class="text-xl font-semibold mb-2 text-primary">{{ skill.name }}</h3>
             <p class="text-muted-foreground">{{ skill.description }}</p>
@@ -41,11 +41,11 @@
               </div>
               <a :href="project.link" class="font-medium inline-flex items-center text-primary hover:text-primary/80">
                 View Project
-                <svg class="w-4 h-4 ml-1" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
+<!--                <svg class="w-4 h-4 ml-1" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
                      stroke-linecap="round" stroke-linejoin="round">
                   <path d="M5 12h14"></path>
                   <path d="M12 5l7 7-7 7"></path>
-                </svg>
+                </svg>-->
               </a>
             </div>
           </div>
