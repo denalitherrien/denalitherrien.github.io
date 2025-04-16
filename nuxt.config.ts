@@ -13,6 +13,9 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
+  app: {
+    baseURL: '/your-repo-name/', // GitHub Pages serves from this subpath
+  },
 
   modules: [
     '@nuxt/eslint',
