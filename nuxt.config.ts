@@ -14,30 +14,35 @@ export default defineNuxtConfig({
     ],
   },
   app: {
-    baseURL: '/your-repo-name/', // GitHub Pages serves from this subpath
+    baseURL: '/', // Change if using project repo
+    buildAssetsDir: '/_nuxt/', // Explicit assets directory
   },
-
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ['/']
+    }
+  },
   modules: [
     '@nuxt/eslint',
     '@nuxt/fonts',
-    '@nuxt/content',
     '@nuxt/icon',
     '@nuxt/image',
     'shadcn-nuxt',
     '@nuxtjs/color-mode'
-  ], 
+  ],
   colorMode: {
     classSuffix: '',
   },
   shadcn: {
-    /**
-     * Prefix for all the imported component
-     */
     prefix: '',
-    /**
-     * Directory that the component lives in.
-     * @default "./components/ui"
-     */
     componentDir: './app/components/ui'
+  },
+  // For GitHub Pages deployment
+  experimental: {
+    payloadExtraction: true
+  },
+  routeRules: {
+    '/**': { isr: true } // Enable incremental static regeneration
   }
 })

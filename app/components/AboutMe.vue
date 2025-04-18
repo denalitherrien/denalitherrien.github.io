@@ -32,19 +32,22 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import { onMounted } from 'vue';
 import portfolioData from "~/data/portfolioData.js";
 
 const portfolio = ref(portfolioData);
 
 // Add a class after component is mounted to trigger animations
-setTimeout(() => {
-  const elements = document.querySelectorAll('.animate-in');
-  elements.forEach((el, index) => {
-    setTimeout(() => {
-      el.classList.add('opacity-100', 'translate-x-0');
-    }, index * 150); // Stagger the animations
-  });
-}, 100);
+onMounted(() => {
+  setTimeout(() => {
+    const elements = document.querySelectorAll('.animate-in');
+    elements.forEach((el, index) => {
+      setTimeout(() => {
+        el.classList.add('opacity-100', 'translate-x-0');
+      }, index * 150);
+    });
+  }, 100);
+});
 </script>
 
 <style scoped>

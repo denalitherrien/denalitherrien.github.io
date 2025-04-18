@@ -89,7 +89,7 @@ import portfolioData from '../data/portfolioData';
 import Contact from "~/components/Contact.vue";
 
 definePageMeta({
-  layout: 'default'
+  layout: false
 })
 
 const portfolio = ref(portfolioData);
