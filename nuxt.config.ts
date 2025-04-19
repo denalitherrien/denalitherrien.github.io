@@ -15,12 +15,12 @@ export default defineNuxtConfig({
   },
   app: {
     baseURL: '/', // Change if using project repo
-    buildAssetsDir: '/_nuxt/', // Explicit assets directory
+    buildAssetsDir: '_nuxt/', // Explicit assets directory
   },
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/']
+      failOnError: false,
     }
   },
   modules: [
@@ -44,5 +44,5 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/**': { isr: true } // Enable incremental static regeneration
-  }
+  },
 })
