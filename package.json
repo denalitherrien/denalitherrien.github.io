@@ -9,8 +9,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "predeploy": "pnpm run generate",
-    "deploy": "break > dist\\.nojekyll && gh-pages -d dist"
+    "predeploy": "nuxt generate && copy nul .output\\public\\.nojekyll",
+    "deploy": "gh-pages -d .output\\public --branch gh-pages --dotfiles"
   },
   "dependencies": {
     "@nuxt/fonts": "0.11.1",
