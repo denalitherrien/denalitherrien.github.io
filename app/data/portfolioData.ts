@@ -10,6 +10,8 @@ import evaluationForm from '@/assets/images/evaluation-form.webp';
 import graph from '@/assets/images/graph.webp';
 import login from '@/assets/images/login.webp';
 import patientList from '@/assets/images/patient-list.webp';
+import portfolioAbout from '@/assets/images/portfolio-about.webp';
+import portfolioSkills from '@/assets/images/portfolio-skills.webp';
 
 export interface Skill {
     name: string;
@@ -54,7 +56,6 @@ export interface PortfolioData {
     footerTagline: string;
     skills: Skill[];
     projects: Project[];
-    testimonials: Testimonial[];
     socialLinks: SocialLink[];
 }
 
@@ -67,24 +68,24 @@ const portfolioData: PortfolioData = {
     phone: phone,
     about: [
         {
-            text: 'Hello! Denali Therrien, a passionate developer and' +
-                'designer with over 2 years of experience' +
-                'creating intuitive and impactful digital experiences. I believe in combining creative thinking' +
+            text: 'Hello! Denali Therrien, a passionate developer and ' +
+                'designer with over 2 years of experience ' +
+                'creating intuitive and impactful digital experiences. I believe in combining creative thinking ' +
                 'with technical expertise to build solutions that not only work flawlessly but also delight users.'
         },
         {
-            text: 'My fascination with technology began in the computer labs at school,' +
-                'where I developed my skills through creative exploration and pushing' +
-                'system boundaries—discovering how things worked by occasionally finding their limits.' +
-                'Since then, I\'ve cultivated my skills across various domains of software development,' +
-                'from frontend frameworks to backend architectures. I\'m particularly interested' +
-                'in user experience design and accessibility, ensuring that everything I create' +
+            text: 'My fascination with technology began in the computer labs at school, ' +
+                'where I developed my skills through creative exploration and pushing  ' +
+                'system boundaries — discovering how things worked by occasionally finding their limits. ' +
+                'Since then, I\'ve cultivated my skills across various domains of software development, ' +
+                'from frontend frameworks to backend architectures. I\'m particularly interested ' +
+                'in user experience design and accessibility, ensuring that everything I create ' +
                 'can be enjoyed by everyone.'
         },
         {
-            text: 'When I\'m not coding, you can find me reading my latest fantasy fixation, playing' +
-                'competitive video games,' +
-                'or calculating the odds of surviving that next encounter in my D&D campaign.' +
+            text: 'When I\'m not coding, you can find me reading my latest fantasy fixation, playing ' +
+                'competitive video games, ' +
+                'or calculating the odds of surviving that next encounter in my D&D campaign. ' +
                 'I believe in continuous learning and am currently enjoying web development'
         }
     ],
@@ -122,31 +123,11 @@ const portfolioData: PortfolioData = {
         {
             title: 'Portfolio Website',
             description: 'A custom portfolio website template with smooth animations and a responsive design.',
-            images: [],
+            images: [portfolioAbout, portfolioSkills],
             tags: ['Vue.js', 'Tailwind CSS'],
-            link: '#',
+            link: 'https://github.com/denalitherrien/denalitherrien.github.io',
             currentImageIndex: 0
         },
-    ],
-    testimonials: [
-        {
-            name: 'Sarah Johnson',
-            position: 'CEO, TechStart',
-            avatar: '',
-            quote: 'John delivered an exceptional website that exceeded our expectations. His attention to detail and creative approach transformed our online presence.'
-        },
-        {
-            name: 'Michael Chen',
-            position: 'Product Manager, InnovateX',
-            avatar: '',
-            quote: 'Working with John was a pleasure. He understood our requirements perfectly and delivered a polished product on time and on budget.'
-        },
-        {
-            name: 'Emily Rodriguez',
-            position: 'Marketing Director, GrowthLabs',
-            avatar: '',
-            quote: 'John\'s work on our web application dramatically improved user engagement. His UI/UX skills are top-notch, and he\'s incredibly responsive to feedback.'
-        }
     ],
     socialLinks: [
         { name: 'GitHub', url: 'https://github.com/denalitherrien', icon: faGithub },

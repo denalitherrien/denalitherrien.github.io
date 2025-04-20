@@ -1,5 +1,5 @@
 <template>
-  <div class="font-['Segoe_UI'] max-w-4xl mx-auto px-5 py-6 leading-6 overflow-x-hidden flex-grow-1">
+  <div id="about" class="font-['Segoe_UI'] max-w-4xl mx-auto px-5 py-6 leading-6 overflow-x-hidden flex-grow-1">
     <!-- Name Header with HTML-style brackets -->
     <div class="my-10 relative">
       <div class="flex items-center justify-start flex-nowrap font-['JetBrains_Mono']">
@@ -10,7 +10,7 @@
     </div>
 
     <!-- About Me Content -->
-    <div id="about" class="animate-in rounded-lg shadow-md place-self-end">
+    <div class="animate-in place-self-end">
       <h2 class="text-xl font-semibold text-primary border-b-2 border-blue-500 pb-2.5">About Me</h2>
       <div class="mt-5">
         <div v-for="about in portfolio.about" :key="about.text" class="leading-7 ">

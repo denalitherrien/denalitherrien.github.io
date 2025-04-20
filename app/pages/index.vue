@@ -65,7 +65,7 @@
               <p class="mb-4 text-muted-foreground">{{ project.description }}</p>
               <div class="flex flex-wrap gap-2 mb-4">
             <span v-for="tag in project.tags" :key="tag"
-                  class="px-3 py-1 text-sm font-medium rounded-full bg-accent text-accent-foreground">
+                  class="px-3 py-1 text-sm font-medium rounded-full bg-sidebar-border text-accent-foreground">
               {{ tag }}
             </span>
               </div>
@@ -77,31 +77,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Testimonials Section -->
-    <!--
-    <section class="py-16">
-      <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-12 text-primary">What People Say</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div v-for="testimonial in portfolio.testimonials" :key="testimonial.name"
-               class="p-6 rounded-lg bg-item-3 shadow-md hover:shadow-lg transition duration-300 border border-border">
-            <div class="flex items-center mb-4">
-              <div class="h-12 w-12 rounded-full overflow-hidden border-2 border-primary">
-                <img :src="testimonial.avatar || '/api/placeholder/100/100'" alt="Avatar"
-                     class="h-full w-full object-cover">
-              </div>
-              <div class="ml-4">
-                <h3 class="text-lg font-semibold text-primary">{{ testimonial.name }}</h3>
-                <p class="text-muted-foreground">{{ testimonial.position }}</p>
-              </div>
-            </div>
-            <p class="italic text-foreground">{{ testimonial.quote }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    -->
 
     <Contact/>
   </div>
