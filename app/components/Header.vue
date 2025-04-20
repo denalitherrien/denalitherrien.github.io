@@ -1,15 +1,17 @@
 <template>
-  <header class="border-b bg-background">
-    <nav class="bg-white shadow-md">
+  <header class="border-b bg-background sticky top-0 z-50">
+    <nav class="shadow-md">
       <div class="container mx-auto px-6 py-3 flex justify-between items-center">
         <a class="font-bold text-xl" href="#">{{ portfolio.name }}</a>
         <div class="hidden md:flex items-center space-x-8">
           <a v-for="item in navigation" :key="item.name"
              :href="item.href"
-             class="transition duration-300">
+             class="transition duration-300 hover:text-primary"
+             @click.prevent="scrollToSection(item.href)">
             {{ item.name }}
           </a>
         </div>
+        <ThemeToggle />
         <div class="md:hidden">
           <button @click="mobileMenuOpen = !mobileMenuOpen" class="">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -24,23 +26,13 @@
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <a v-for="item in navigation" :key="item.name"
              :href="item.href"
-             class="block px-3 py-2 rounded transition duration-300">
+             class="block px-3 py-2 rounded transition duration-300 hover:bg-gray-100"
+             @click.prevent="scrollToSection(item.href); mobileMenuOpen = false">
             {{ item.name }}
           </a>
         </div>
       </div>
     </nav>
-<!--    <nav>
-      <router-link to="/">Denali Therrien</router-link>
-      <router-link to="/about">About Me</router-link>
-      <router-link to="/contact">Contact</router-link>
-      <router-link to="/projects">Projects</router-link>
-    </nav>-->
-<!--    <div class="container flex items-center justify-between h-16 px-4">
-      <div class="flex items-center space-x-4">
-        <h1 class="text-xl font-bold text-foreground">Denali Therrien</h1>
-      </div>
-    </div>-->
   </header>
 </template>
 
@@ -51,11 +43,30 @@ import portfolioData from "~/data/portfolioData";
 const mobileMenuOpen = ref(false);
 
 const navigation = ref([
-  { name: 'Home', href: '#' },
   { name: 'About', href: '#about' },
+  { name: 'Skills', href: '#skills' },
   { name: 'Projects', href: '#projects' },
   { name: 'Contact', href: '#contact' }
 ]);
+
+const scrollToSection = (href: string) => {
+  if (href === '#') {
+    // Scroll to top for home
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    return;
+  }
+
+  const el = document.querySelector(href);
+  if (el) {
+    el.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+};
 
 const portfolio = ref(portfolioData);
 </script>

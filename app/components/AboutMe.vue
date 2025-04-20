@@ -10,7 +10,7 @@
     </div>
 
     <!-- About Me Content -->
-    <div class="animate-in rounded-lg shadow-md place-self-end">
+    <div id="about" class="animate-in rounded-lg shadow-md place-self-end">
       <h2 class="text-xl font-semibold text-primary border-b-2 border-blue-500 pb-2.5">About Me</h2>
       <div class="mt-5">
         <div v-for="about in portfolio.about" :key="about.text" class="leading-7 ">

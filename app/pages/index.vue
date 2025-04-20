@@ -1,16 +1,16 @@
 <template>
   <div class="bg-background text-foreground flex flex-wrap justify-center">
-    <AboutMe />
+    <AboutMe/>
 
     <!-- Skills Section -->
-    <section class="py-12">
+    <section id="skills" class="py-12">
       <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold text-center mb-12 text-primary">My Skills</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           <div v-for="skill in portfolio.skills" :key="skill.name"
                class="p-6 rounded-lg bg-item-1 shadow-md hover:shadow-lg transition duration-300 text-center border border-border">
-            <div class="mb-3 text-accent">
-<!--              <i :class="skill.icon" class="text-3xl"></i>-->
+            <div class="mb-3 text-accent flex justify-center">
+              <font-awesome-icon :icon="skill.icon" class="h-5 w-5 text-blue-500" />
             </div>
             <h3 class="text-xl font-semibold mb-2 text-primary">{{ skill.name }}</h3>
             <p class="text-muted-foreground">{{ skill.description }}</p>
@@ -26,26 +26,51 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div v-for="project in portfolio.projects" :key="project.title"
                class="rounded-lg overflow-hidden bg-item-2 shadow-md hover:shadow-xl transition duration-300 border border-border">
-            <div class="h-48 overflow-hidden">
-              <img :src="project.image || '/api/placeholder/400/320'" alt="Project thumbnail"
-                   class="w-full h-full object-cover">
+            <div class="h-48 overflow-hidden relative">
+              <!-- Image carousel -->
+              <div class="carousel w-full h-full">
+                <img
+                    :src="project.images[project.currentImageIndex] || '/api/placeholder/400/320'"
+                    :alt="`${project.title} image ${project.currentImageIndex + 1}`"
+                    class="w-full h-full object-cover"
+                />
+              </div>
+
+              <!-- Navigation arrows -->
+              <div class="absolute inset-y-0 left-0 flex items-center">
+                <button @click="prevImage(project)" class="p-1 rounded-full bg-black/30 text-white hover:bg-black/50">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="absolute inset-y-0 right-0 flex items-center">
+                <button @click="nextImage(project)" class="p-1 rounded-full bg-black/30 text-white hover:bg-black/50">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </button>
+              </div>
+              <!-- Dots indicator -->
+              <div class="absolute bottom-2 left-0 right-0 flex justify-center gap-1">
+                <button v-for="(image, index) in project.images" :key="index"
+                        @click="setCurrentImage(project, index)"
+                        class="w-2 h-2 rounded-full"
+                        :class="project.currentImageIndex === index ? 'bg-white' : 'bg-white/50'">
+                </button>
+              </div>
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold mb-2 text-primary">{{ project.title }}</h3>
               <p class="mb-4 text-muted-foreground">{{ project.description }}</p>
               <div class="flex flex-wrap gap-2 mb-4">
-                <span v-for="tag in project.tags" :key="tag"
-                      class="px-3 py-1 text-sm font-medium rounded-full bg-accent text-accent-foreground">
-                  {{ tag }}
-                </span>
+            <span v-for="tag in project.tags" :key="tag"
+                  class="px-3 py-1 text-sm font-medium rounded-full bg-accent text-accent-foreground">
+              {{ tag }}
+            </span>
               </div>
               <a :href="project.link" class="font-medium inline-flex items-center text-primary hover:text-primary/80">
                 View Project
-<!--                <svg class="w-4 h-4 ml-1" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
-                     stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14"></path>
-                  <path d="M12 5l7 7-7 7"></path>
-                </svg>-->
               </a>
             </div>
           </div>
@@ -78,7 +103,7 @@
     </section>
     -->
 
-    <Contact />
+    <Contact/>
   </div>
 </template>
 
@@ -86,11 +111,27 @@
 
 import {ref} from 'vue';
 import portfolioData from '../data/portfolioData';
+import type {Project} from "~/data/portfolioData";
 import Contact from "~/components/Contact.vue";
+import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 
 definePageMeta({
-  layout: false
-})
+  layout: 'default'
+});
+
+const prevImage = (project: Project) => {
+  if (project.images.length <= 1) return;
+  project.currentImageIndex = (project.currentImageIndex - 1 + project.images.length) % project.images.length;
+};
+
+const nextImage = (project: Project) => {
+  if (project.images.length <= 1) return;
+  project.currentImageIndex = (project.currentImageIndex + 1) % project.images.length;
+};
+
+const setCurrentImage = (project: Project, index: number) => {
+  project.currentImageIndex = index;
+};
 
 const portfolio = ref(portfolioData);
 
