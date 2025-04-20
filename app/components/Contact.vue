@@ -10,16 +10,14 @@ import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome"; // Import portfoli
       <h2 class="text-3xl font-bold text-center mb-5">Get In Touch</h2>
       <div class="max-w-2xl mx-auto">
         <!-- Contact Information Section -->
-        <div class="space-y-6">
+        <div class="space-y-6 text-center">
           <div class="mb-4">
             <h3 class="text-xl font-semibold text-primary text-center">Contact Information</h3>
-            <p class="text-muted-foreground mb-2"><strong>Name:</strong> {{ portfolioData.name }}</p>
+            <p class="text-muted-foreground mb-2">{{ portfolioData.name }}</p>
             <p class="text-muted-foreground mb-2">
-              <strong>Email:</strong>
               <a :href="`mailto:${portfolioData.email}`" class="text-blue-500">{{ portfolioData.email }}</a>
             </p>
             <p class="text-muted-foreground mb-2">
-              <strong>Phone:</strong>
               <a :href="`tel:${portfolioData.phone}`" class="text-blue-500">{{ portfolioData.phone }}</a>
             </p>
           </div>

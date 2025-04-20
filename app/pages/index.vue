@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-background text-foreground flex flex-wrap justify-center">
+  <div class="bg-background text-foreground flex flex-wrap justify-center flex-col">
     <AboutMe/>
 
     <!-- Skills Section -->
@@ -78,7 +78,9 @@
       </div>
     </section>
 
-    <Contact/>
+    <section>
+      <Contact/>
+    </section>
   </div>
 </template>
 

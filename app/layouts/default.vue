@@ -2,10 +2,8 @@
     <div id="default-layout" class="min-h-screen flex flex-col bg-background font-sans">
       <Header />
       
-      <div class="flex-1 bg-background">
-        <main class="container">
+      <div class="flex-1 bg-background justify-center">
           <slot />
-        </main>
       </div>
       <Footer />
     </div>
